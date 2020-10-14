@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <ul id="slides">
+      <li class="slide showing"><img src="images/casper-01.jpg" /></li>
+      <li class="slide"><img src="images/jackson-01.jpg" /></li>
+      <li class="slide"><img src="images/jackson-casper-01.jpg" /></li>
+      <li class="slide"><img src="images/jackson-casper-02.jpg" /></li>
+      <li class="slide"><img src="images/jackson-casper-03.jpg" /></li>
+    </ul>
+    <script type="text/javascript">
+      var slides = document.querySelectorAll('#slides .slide');
+      var currentSlide = 0;
+      var slideInterval = setInterval(nextSlide,3000);
+
+      function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+      }
+    </script>
+  </body>
+</html>
